@@ -1,0 +1,16 @@
+  <style>
+    .card {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+<h1 class="text-center"> <%= @task.title %> </h1>
+
+<div class="card mx-auto">
+  <%= @task.details %>
+  <i class="fa-solid fa-rotate-left"> <%= link_to "back", tasks_path %></i>
+  <i class="fa-solid fa-trash"><%= link_to "Delete", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></i>
+
+</div>

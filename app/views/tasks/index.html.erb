@@ -1,0 +1,24 @@
+  <style>
+    .card {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+<h1 class="text-center"> my tasks </h1>
+
+<div class="card mx-auto">
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+    <%= check_box_tag "task_ids[]", task.id %>
+    <%= link_to task.title, task_path(task) %>
+
+  </li>
+  <% end %>
+</ul>
+</div>
+
+<i class="fa-solid fa-plus"><%= link_to "Add Task", new_task_path %></i>
+
